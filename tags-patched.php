@@ -168,8 +168,8 @@ function __GenerateTagList($pagelist, $showselected)
 		// CHANGED: 2012-03-03 tpt -- reduce branching by setting a variable instead of repeating the code
 		$tagclasslabel = ($tagselection[$tag] && $showselected) ? 'listtagavailable' : 'listtag';
 		// CHANGED: 2012-03-03 tpt -- output each tag on a single line, no break in the middle
-		$output=$output.'<span class="'.$tagclasslabel.'" style="font-size:'.$size.'px;font-weight:'.($value+500).'">" .
-			"<a href="'.$ScriptUrl.'?action=tags&amp;tag='.$tag.'">'.$tag.'</a></span> '.PHP_EOL;
+		$output=$output.'<span class="'.$tagclasslabel.'" style="font-size:'.$size.'px;font-weight:'.($value+500).'">' .
+			'<a href="'.$ScriptUrl.'?action=tags&amp;tag='.$tag.'">'.$tag.'</a></span> '.PHP_EOL;
 	}
 	return $output;
 }
