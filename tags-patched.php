@@ -137,7 +137,7 @@ function __GenerateTagList($pagelist, $showselected)
 	global $tags_size_limit;
 	$tagcount=array();
 	$tagselection=array();
-	$output=PHP_EOL; // CHANGED: 2012-03-03 tpt -- start off with a clean line in the page output
+	$output=''; // DO NOT START WITH ANY WHITE SPACE -- this will trigger a <pre></pre> environment around your tag cloud
 	foreach ($pagelist as $pagename)
 	{
 		$page=ReadPage($pagename, READPAGE_CURRENT);
@@ -150,6 +150,9 @@ function __GenerateTagList($pagelist, $showselected)
 				continue; // don't tag page variables
 			}
 			$key=ucfirst(trim($value));
+			if (empty($key)) {
+				continue; // don't save empty tags
+			}
 			$tagcount[$key]+=1;
 			$tagselection[$key] = in_array($value, $tags);
 		}
