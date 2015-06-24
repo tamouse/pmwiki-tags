@@ -1,0 +1,44 @@
+/**
+ *   Copyright 2005 Michael  Vonrueden (mail@michael-vonrueden.de)
+ * 	This file is tags.php; you can redistribute it and/or modify
+ * 	it under the terms of the GNU General Public License as published
+ * 	by the Free Software Foundation; either version 2 of the License, or
+ * 	(at your option) any later version.
+ *
+ * 	This script enables tagged sites like in flickr. Insert tags into the wikis
+ * 	with this markup:
+ * 		(:tags keyword, Keyword, etc. :)
+ *      Insert tags on a page without showing them:
+ * 		(:tags-hide keyword keyword :)
+ * 	Retrieve all Tags with the markup:
+ * 		(:listtags:)
+ * 	Retrieve tags for the current group only:
+ * 		(:listgrouptags:)
+ *
+ * 	The function HandleTags will generate Temporary Sites in the style of
+ * 	Tag.Keyword
+ *
+ * 	To use this script, simply copy it into the cookbook/ directory
+ * 	and add the following line to config.php (or a per-page/per-group
+ * 	customization file). include_once('cookbook/tags.php');
+ *
+ * Changes
+ *
+ * 	2012-03-03 V1.1.1 [Tamara Temple (tpt) <tamara@tamaratemple.com>]
+ * 	* clean up output of tag listing
+ *
+ * 	May, 21th 2011 V1.1 [Daniel Kasmeroglu, Angela Kille, Kaushik Sridharan, Joshua Hall-Bachner]
+ * 	* Applied public patches from http://www.pmwiki.org/wiki/Cookbook/Tags .
+ * 	* Removal of unnecessary comma separators.
+ * 	* Correct selection of tagged pages if one tag is part of another one.
+ * 	* In addition to 'listtags' there's now a 'listgrouptags' available.
+ * 	* The font size of the cloud can be limited now through the parameter
+ * 	'$tags_size_limit'.
+ * 	* Added colored highlighting of page related tags for 'listtags' if the
+ * 	  option 'showselected' is supplied.
+ * 	* Tags can be declared using 'tags-hide' so they won't be displayed on
+ * 	  the page (useful in conjunction with (:listtags showselected:).
+ * 	* Prefix with the tag listing is configurable now ($tags_title_prefix).
+ * 	  Aug, 31th 2005 V1.0 * Initial Development
+ *
+ */
